@@ -22,8 +22,8 @@ Custom iPod Classic firmware built on a Rockbox fork. The goal is a modern, mini
 
 ## Build Target
 
-- Primary: `ipodvideo` (5G/5.5G, 220×176 LCD)
-- Secondary: `ipod6g` (Classic 6G/7G, 320×240 LCD)
+- Primary: `ipod6g` (Classic 7G, 320×240 LCD)
+- Simulator: `build-sim/` directory, run `./rockboxui` to test UI changes on desktop
 
 ## Rules
 

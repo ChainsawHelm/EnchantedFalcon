@@ -2,11 +2,11 @@
 
 ## Required
 
-### iPod Classic 5.5G (30GB or 80GB model)
-- **Why 5.5G specifically:** Best Rockbox support, Wolfson WM8758 DAC (better audio than later models), well-documented hardware
-- **Where to buy:** eBay, Facebook Marketplace, Swappa — typically $50-100 for a working unit
-- **Model numbers:** A1136 (30GB), A1136 (80GB)
-- **How to identify 5.5G vs 5G:** 5.5G has "Search" in the main menu; serial starts with V2 or later
+### iPod Classic 7th Generation (160GB)
+- **Why 7G:** Largest screen (320×240), most storage, still well-supported by Rockbox
+- **Where to buy:** eBay, Facebook Marketplace, Swappa — typically $60-120 for a working unit
+- **Model number:** A1238 (160GB, late 2009)
+- **How to identify 7G:** Thinner than 6G, only came in 160GB, serial starts with 8 or 9-series
 
 ### iFlash SD Adapter
 - **iFlash Solo** (~$30) — single SD card slot, simplest option

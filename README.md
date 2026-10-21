@@ -6,8 +6,7 @@ Rockbox solved the hard problems (hardware drivers, audio codecs, filesystem, po
 
 ## Target Hardware
 
-- **iPod Classic 5.5G** (primary target — best community support)
-- iPod Classic 6G/7G (secondary)
+- **iPod Classic 7th Generation** (primary target, 320×240 LCD)
 - iFlash SD adapter recommended (replaces spinning HDD)
 
 ## What's Different from Rockbox

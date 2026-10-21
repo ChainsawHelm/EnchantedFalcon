@@ -1,27 +1,42 @@
 # Enchanted Falcon — Now Playing Screen (WPS)
-# Target: iPod Classic 5.5G (220x176) / 6G (320x240)
+# Target: iPod Classic 7G (320x240 LCD)
 #
 # Rockbox WPS reference: https://www.rockbox.org/wiki/CustomWPS
 #
-# This is a starting point — the WPS markup language controls
-# what's shown on the Now Playing screen.
+# Tags used:
+#   %V  - viewport definition (x,y,width,height,font)
+#   %Cl - album art display (x,y,width,height,h-align,v-align)
+#   %it - track title
+#   %ia - track artist
+#   %id - track album
+#   %pc - current position
+#   %pt - total time
+#   %pb - progress bar
+#   %bl - battery level
+#   %s  - scroll
+#   %ac - align center
+#   %ar - align right
 
-# Preload images
-%xl(A,album_art.bmp,0,0)
+# --- Album Art (centered, large) ---
+%V(40,10,240,180,-)
+%Cl(0,0,240,180,c,c)
 
-# Viewport: Album Art (centered, large)
-%V(10,5,200,140,-)
-%Cl(0,0,200,140,c,c)
-
-# Viewport: Track Info (bottom)
-%V(10,148,200,28,-)
+# --- Track Title (below art) ---
+%V(10,195,300,18,-)
 %ac%s%it
-%ac%s%ia
 
-# Viewport: Progress Bar
-%V(10,145,200,2,-)
-%pb(0,0,200,2,progressbar.bmp)
+# --- Artist - Album ---
+%V(10,215,300,15,-)
+%ac%s%ia - %id
 
-# Viewport: Status (top-right, minimal)
-%V(180,2,40,12,-)
+# --- Progress Bar ---
+%V(20,192,280,3,-)
+%pb(0,0,280,3,-)
+
+# --- Time (left: elapsed, right: total) ---
+%V(20,233,280,10,-)
+%al%pc%ar%pt
+
+# --- Battery (top right) ---
+%V(280,2,40,12,-)
 %ar%bl%%

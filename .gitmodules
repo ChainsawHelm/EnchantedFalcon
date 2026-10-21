@@ -1,0 +1,3 @@
+[submodule "rockbox"]
+	path = rockbox
+	url = git://git.rockbox.org/rockbox.git

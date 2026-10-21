@@ -9,7 +9,7 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 ROCKBOX_DIR="$PROJECT_DIR/rockbox"
 BUILD_DIR="$PROJECT_DIR/build"
 
-TARGET="${1:-ipodvideo}"  # ipodvideo (5G/5.5G) or ipod6g (6G/7G)
+TARGET="${1:-ipod6g}"  # ipod6g (Classic 7G, 320x240)
 
 echo "=== Enchanted Falcon Build ==="
 echo "Target: $TARGET"
