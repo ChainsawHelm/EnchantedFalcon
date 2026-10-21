@@ -1,0 +1,8 @@
+# Enchanted Falcon — Status Bar Skin (SBS)
+# iPod Classic 7G — 320x240
+#
+# Minimal: no status bar. Full screen for content.
+# UI viewport uses entire screen.
+
+# Full-screen UI viewport (no status bar)
+%Vi(-,0,0,-,-,1)

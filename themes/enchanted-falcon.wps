@@ -1,42 +1,57 @@
-# Enchanted Falcon — Now Playing Screen (WPS)
-# Target: iPod Classic 7G (320x240 LCD)
+# Enchanted Falcon — Now Playing (WPS)
+# iPod Classic 7G — 320x240
 #
-# Rockbox WPS reference: https://www.rockbox.org/wiki/CustomWPS
-#
-# Tags used:
-#   %V  - viewport definition (x,y,width,height,font)
-#   %Cl - album art display (x,y,width,height,h-align,v-align)
-#   %it - track title
-#   %ia - track artist
-#   %id - track album
-#   %pc - current position
-#   %pt - total time
-#   %pb - progress bar
-#   %bl - battery level
-#   %s  - scroll
-#   %ac - align center
-#   %ar - align right
+# Design: Dark, minimal. Large album art centered.
+# Track info below. Thin progress bar. Subtle status.
 
-# --- Album Art (centered, large) ---
-%V(40,10,240,180,-)
-%Cl(0,0,240,180,c,c)
+# Disable built-in status bar
+%wd
 
-# --- Track Title (below art) ---
-%V(10,195,300,18,-)
-%ac%s%it
+# Load backdrop
+%X(backdrop.bmp)
 
-# --- Artist - Album ---
-%V(10,215,300,15,-)
-%ac%s%ia - %id
+# Load additional font for header
+%Fl(2,18-Adobe-Helvetica-Bold.fnt)
+%Fl(3,14-Adobe-Helvetica-Bold.fnt)
 
-# --- Progress Bar ---
-%V(20,192,280,3,-)
-%pb(0,0,280,3,-)
+# Preload images
+%xl(B,battery.bmp,0,0,10)
+%xl(F,playmode.bmp,0,0,5)
 
-# --- Time (left: elapsed, right: total) ---
-%V(20,233,280,10,-)
+# --- Album Art / No Art conditional ---
+%?C<%Vd(a)|%Vd(b)>
+
+# --- Album Art viewport ---
+%ax%Vl(a,60,8,200,160,-)
+%Cl(0,0,200,160,c,c)
+%Cd
+
+# --- No Art: Show track info large in center ---
+%ax%Vl(b,20,30,280,140,2)
+%ac%s%?it<%it|%fn>
+%ac%s%?ia<%ia|>
+%ac%s%?id<%id|>
+
+# --- Progress bar ---
+%V(20,172,280,4,-)
+%pb(0,0,280,4,pb-fill.bmp)
+
+# --- Time elapsed / total ---
+%V(20,178,280,14,3)
 %al%pc%ar%pt
 
+# --- Track title (below progress) ---
+%V(10,194,300,20,2)
+%ac%s%?it<%it|%fn>
+
+# --- Artist ---
+%V(10,216,300,16,1)
+%ac%s%?ia<%ia|>
+
+# --- Playback mode icon (bottom left) ---
+%V(4,220,16,12,-)
+%?mp<%xd(Fa)|%xd(Fb)|%xd(Fc)|%xd(Fd)|%xd(Fe)>
+
 # --- Battery (top right) ---
-%V(280,2,40,12,-)
-%ar%bl%%
+%V(296,4,20,10,-)
+%?bl<%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)>
